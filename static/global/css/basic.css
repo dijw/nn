@@ -1,0 +1,107 @@
+
+
+@font-face {
+  font-family: "MQ Sans";
+  src: url("../../Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MQ Sans";
+  src: url("../../Semibold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "MQ Sans";
+  src: url("../../Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'MQ Sans';
+  word-wrap: break-word;
+  background-color: var(--color-white);
+}
+img {
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  /* ширина scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-white) !important;
+  /* цвет дорожки */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-grey-m2) !important;
+  /* цвет плашки */
+  border-radius: 20px;
+  /* закругления плашки */
+  /* padding вокруг плашки */
+}
+.logo_text {
+  font-style: normal;
+font-weight: 700;
+font-size: 33px;
+color: var(--color-black);
+}
+input::placeholder {
+  color: var(--color-grey);
+  font-size: 14px;
+ font-weight: 500;
+}
+.navbar_droplist_image {
+  width: 25px;
+  height: 25px;
+}
+
+.mt-8 {
+  margin-top: 6rem !important;
+}
+
+.mt-6 {
+  margin-top: 8rem !important;
+}
+
+.image_dark {
+  display: var(--image);
+}
+.image_dark {
+  display: var(--image-dark);
+}
+.image_light {
+  display: var(--image-light);
+}
+
+.invert_icon {
+  filter: invert(var(--invert));
+}
+
+label {
+  color: var(--color-grey);
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 993px) {
+  .mt-lg-6 {
+    margin-top: 8rem !important;
+  }
+}
+
+@media screen and (max-width: 574px) {
+  .custom-container {
+    width: 95%;
+  };
+}
