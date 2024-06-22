@@ -1,130 +1,273 @@
 <!DOCTYPE html>
 <html lang="ru">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta name="keywords" content="адванс, nn helper, nn-helper, nn helper для адванс, nn helper для адванса, nn-helper для адванс, nn-helper для адванс рп, nn-helper advance rp, nn helper advance, скрипт для адванс, скрипт для advance, скрипт для МВД, скрипт для МЗ, скрипт для МО, nn helper для армии, advance roleplay, ахк для advance rp, нн хелпер">
-      <title>NN Helper</title>
-      <meta name="description" content="NN Helper" />
-      <link rel="stylesheet" href="static/global/css/colors.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="адванс, nn helper, nn-helper, nn helper для адванс, nn helper для адванса, nn-helper для адванс, nn-helper для адванс рп, nn-helper advance rp, nn helper advance, скрипт для адванс, скрипт для advance, скрипт для МВД, скрипт для МЗ, скрипт для МО, nn helper для армии, advance roleplay, ахк для advance rp, нн хелпер">
+    <title>NN Helper</title>
+    <meta name="description" content="NN Helper" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="static/global/css/colors.css">
+    <link rel="stylesheet" href="static/global/css/basic.css">
+    <link rel="stylesheet" href="static/global/css/awful_ui.css">
+    <link rel="stylesheet" href="static/landing/css/landing.css" />
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="shortcut icon" href="static/favicon.ico" />
+    <style>
+        .main-cell-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+		.text_container {
+			font-size: 70px;
+		}
+		.swiper-container {
+			position: relative;
+			width: 66%;
+			height: 80%;
+		}
+        .cell {
+            position: relative;
+            width: 100%;
+            max-width: 750px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .cell img {
+            width: 100%;
+            transition: transform 0.5s ease;
+            border-radius: 10px;
+        }
+        .cell:hover img {
+            transform: scale(1.0);
+        }
+        .cell .description {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1.0s ease;
+            border-radius: 10px;
+			transform: translateY(-5%);
+        }
+        .cell:hover .description {
+            opacity: 1;
+        }
+		.a_button_primary, .a_button_secondary {
+			padding: 10px 20px;
+			white-space: nowrap; 
+			text-overflow: ellipsis;
+			overflow: hidden; 
+			max-width: 200px; 
+			box-sizing: border-box; 
+			display: inline-block;
+			text-align: center;
+			margin: 0 1px; 
+		}
+		.button-text {
+			margin: 0; /* Убираем отступы у текста */
+		}
 
-      <link rel="stylesheet" href="static/global/css/basic.css">
-      <link rel="icon" type="image/x-icon" href="static/favicon.ico">
-      <link rel="shortcut icon" href="static/favicon.ico" />
-      <link rel="stylesheet" href="static/global/css/awful_ui.css">
-          <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-      <link rel="stylesheet" href="static/landing/css/landing.css" />
-      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-   </head>
-      <div class="container header-container mb-5">
-         <div class="row">
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            border-radius: 10px;
+        }
+        .admin-panel input, .admin-panel button {
+            display: block;
+            margin: 5px 0;
+        }
+        .admin-panel .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+		.col-md-6.cell-container {
+            max-width: 400px; /* Установите нужную ширину ячейки */
+            margin: 0 auto; /* Центрирование ячейки */
+            padding: 10px; /* Добавьте отступы */
+        }
+        .cell-container .cell img, .cell-container .description {
+            border-radius: 10px;
+        }
+		.cell-container {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+    </style>
+</head>
+<body>
+    <div class="container header-container mb-5">
+        <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-between">
-               <div class="d-flex align-items-center">
-                     <span class="logo_text ms-2">NN Helper</span> 
-                  </div> </div>         
-         </div>
-      </div>
-      <div class="row mt-5 mt-lg-6"></div>
-      <div class="row mt-4"></div>
-      <div class="container custom-container">
-         <div class="row">
-            <div class="col-12">
-               <div id="canvas_main" style="height: 210px; position: relative" class="d-flex justify-content-ceneter canvas_container">
+                <div class="d-flex align-items-center">
+                    <span class="logo_text ms-2">NN Helper</span>
+                </div>
+                <span>by Ryder Revenge</span>
+            </div>
+        </div>
+    </div>
+
+   <div class="container custom-container">
+        <div class="row">
+            <div class="col-12 main-cell-container">
+			<div id="canvas_main" style="height: 155px; position: relative" class="d-flex justify-content-ceneter canvas_container">
                   <div class="shadow_container"></div>
                   <div class="items_container d-flex flex-column align-items-center">
                      <h1 class="text_container d-flex mb-4">Многофункциональный скрипт для Advance RP</h1>
-                     <div class="landing_buttons w-100 d-flex flex-column flex-lg-row justify-content-center"> <a href="https://github.com/dijw/nn/blob/main/NNHelper.exe?raw=true" class="a_button_primary">Автоустановщик</a> <a href="https://github.com/dijw/nnhelper/blob/main/nnhelper.zip?raw=true" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a> <a href="https://forum.advance-rp.ru/threads/.2383441/"target="_blank"" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a> </div>
-                     </div>
+                    </div>
                </div>
+                <div class="swiper-container cell swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                    <div class="swiper-wrapper" id="swiper-wrapper-15c3239dde613ecc" aria-live="off" style="transform: translate3d(-1380px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" role="group" aria-label="4 / 4" style="width: 460px;">
+                            <img src="static/landing/media/4.png" alt="GameFix">
+                            <div class="description">
+                                <span>Присутсвтвуют функции, которые улучшат производительность GTA.</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" data-swiper-slide-index="0" role="group" aria-label="1 / 4" style="width: 460px;">
+                            <img src="static/landing/media/1.png" alt="Простой интерфейс">
+                            <div class="description">
+                                <span>В таком интерфейсе легко координироваться. Находится всё просто и быстро.</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 4" style="width: 460px;">
+                            <img src="static/landing/media/2.png" alt="Свои отыгровки">
+                            <div class="description">
+                                <span>Не устраивают системные отыгровки? Замени на свои!</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" role="group" aria-label="3 / 4" style="width: 460px;">
+                            <img src="static/landing/media/3.png" alt="Дополнительные функции">
+                            <div class="description">
+                                <span>Кроме РП отыгровок имеется большой дополнительный функционал.</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3" role="group" aria-label="4 / 4" style="width: 460px;">
+                            <img src="static/landing/media/4.png" alt="GameFix">
+                            <div class="description">
+                                <span>Присутсвтвуют функции, которые улучшат производительность GTA.</span>
+                            </div>
+                        </div>
+                    <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 4" style="width: 460px;">
+                            <img src="static/landing/media/1.png" alt="Простой интерфейс">
+                            <div class="description">
+                                <span>В таком интерфейсе легко координироваться. Находится всё просто и быстро.</span>
+                            </div>
+                        </div></div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 3" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+				<div class="landing_buttons w-100 d-flex flex-column flex-lg-row justify-content-center"> <a href="https://github.com/dijw/nn/blob/main/NNHelper.exe?raw=true" class="a_button_primary">Автоустановщик</a> <a href="https://github.com/dijw/nnhelper/blob/main/nnhelper.zip?raw=true" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a> <a href="https://forum.advance-rp.ru/threads/.2383441/" target="_blank" "="" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a> </div>
             </div>
-         </div>
+        
+                <div class="col-md-6 cell-container">
+                    <div class="cell">
+                        <img src="static/landing/media/soon.png" alt="Скоро">
+                        <div class="description">
+                            <span>Пока без описания</span>
+                        </div>
+                    </div>
+                    <div class="title">
+                        <h5>Скоро</h5>
+                    </div>
+						<div class="buttons"> <a href="https://dijw.github.io/nn/" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a> <a href="https://dijw.github.io/nn/" target="_blank" "="" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a> </div>
+                </div>
+            
+                <div class="col-md-6 cell-container">
+                    <div class="cell">
+                        <img src="static/landing/media/soon.png" alt="Скоро">
+                        <div class="description">
+                            <span>И тут тоже его нет (づ￣ 3￣)づ</span>
+                        </div>
+                    </div>
+                    <div class="title">
+                        <h5>Скоооро</h5>
+                    </div>
+						<div class="buttons">  <a href="https://dijw.github.io/nn/" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a> <a href="https://dijw.github.io/nn/" target="_blank" "="" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a> </div>
+                </div>
+            </div>
+	
+    </div>
 
-         <div class="row mt-8 scroll" id="functions">
-            <div class="col-12">
-               <div class="swiper">
-                  <div class="swiper-wrapper">
-                     <div class="swiper-slide">
-                        <div class="row">
-                           <div class="col-12 col-lg-6">
-						<img src="static/landing/media/1.png" class='video_container'>                          
-						</div>
-                         <div class="col-12 col-lg-6 d-flex align-items-center">
-                              <div class="video_data d-flex flex-column "> <span class="video_main_text mb-4 mt-3 mt-lg-0">Простой интерфейс</span> <span class="video_main_subtext">В таком интерфейсе легко координироваться<br>Находится всё просто и быстро.</span> </div>
-                           </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        function toggleAdminPanel() {
+            const adminPanel = document.getElementById('admin-panel');
+            adminPanel.style.display = adminPanel.style.display === 'none' || adminPanel.style.display === '' ? 'block' : 'none';
+        }
+
+        function addCell() {
+            const description = document.getElementById('admin-description').value;
+            const imageUrl = document.getElementById('admin-image-url').value;
+            const title = document.getElementById('admin-title').value;
+            const autoinstallerUrl = document.getElementById('admin-autoinstaller-url').value;
+            const downloadUrl = document.getElementById('admin-download-url').value;
+            const forumUrl = document.getElementById('admin-forum-url').value;
+
+            const newCell = `
+                <div class="col-md-6 cell-container">
+                    <div class="cell">
+                        <img src="${imageUrl}" alt="${title}">
+                        <div class="description">
+                            <span>${description}</span>
                         </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="row">
-                           <div class="col-12 col-lg-6">
-                              <img src="static/landing/media/2.png" class='video_container'>
-                              </img>
-                           </div>
-                           <div class="col-12 col-lg-6 d-flex align-items-center">
-                              <div class="video_data d-flex flex-column "> <span class="video_main_text mb-4 mt-3 mt-lg-0">Свои отыгровки</span> <span class="video_main_subtext">Не устраивают системные отыгровки?<br>Замени на свои!<br><br></span> </div>
-                           </div>
-                        </div>
-                     </div>
-					 <div class="swiper-slide">
-                        <div class="row">
-                           <div class="col-12 col-lg-6">
-                              <img src="static/landing/media/3.png" class='video_container'>
-                              </img>
-                           </div>
-                           <div class="col-12 col-lg-6 d-flex align-items-center">
-                              <div class="video_data d-flex flex-column "> <span class="video_main_text mb-4 mt-3 mt-lg-0">Дополнительные функции</span> <span class="video_main_subtext">Кроме РП отыгровок имеется большой<br>дополнительный функционал.<br><br></span> </div>
-                           </div>
-                        </div>
-                     </div>
-					 <div class="swiper-slide">
-                        <div class="row">
-                           <div class="col-12 col-lg-6">
-                              <img src="static/landing/media/4.png" class='video_container'>
-                              </img>
-                           </div>
-                           <div class="col-12 col-lg-6 d-flex align-items-center">
-                              <div class="video_data d-flex flex-column "> <span class="video_main_text mb-4 mt-3 mt-lg-0">GameFix</span> <span class="video_main_subtext">Присутсвтвуют функции, которые<br>улучшат производительность GTA<br><br></span> </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-pagination"></div>
-               </div>
-            </div>
-         </div>
-         
-         </div>
-      </div>
-      <div id='main'></div>
-   </body>
-   <script>
-      function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-      }
-   </script>
-   <script>
-      const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-        // If we need pagination
-        pagination: {
-          el: '.swiper-pagination',
-        },
-        // Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        // And if we need scrollbar
-        scrollbar: {
-          el: '.swiper-scrollbar',
-        },
-      });
-   </script>
-   <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-<script type="module" src="static/main.js"></script>
+                    </div>
+                    <div class="title">
+                        <h5>${title}</h5>
+                    </div>
+                    <div class="buttons">
+                        <a href="${autoinstallerUrl}" class="btn btn-primary btn-sm">Автоустановщик</a>
+                        <a href="${downloadUrl}" class="btn btn-primary btn-sm">Скачать</a>
+                        <a href="${forumUrl}" target="_blank" class="btn btn-secondary btn-sm">Тема на форуме</a>
+                    </div>
+                    <button onclick="removeCell(this)" class="btn btn-danger btn-sm">Удалить</button>
+                </div>
+            `;
+
+            $('.custom-container .row').append(newCell);
+            toggleAdminPanel();
+        }
+
+        function removeCell(button) {
+            $(button).closest('.cell-container').remove();
+        }
+    </script>
+</body>
 </html>
