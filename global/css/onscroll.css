@@ -1,0 +1,1 @@
+.scroll{opacity:0;transition:all ease .3s;transform:translateX(50px)}.scroll-show{opacity:100;transform:translateX(0px)}@media screen and (max-width:993px){.scroll{opacity:100;transform:translateX(0px)}}
