@@ -24,14 +24,14 @@
             align-items: center;
             margin-bottom: 50px;
         }
-		.text_container {
-			font-size: 70px;
-		}
-		.swiper-container {
-			position: relative;
-			width: 66%;
-			height: 80%;
-		}
+        .text_container {
+            font-size: 70px;
+        }
+        .swiper-container {
+            position: relative;
+            width: 66%;
+            height: 80%;
+        }
         .cell {
             position: relative;
             width: 100%;
@@ -61,26 +61,25 @@
             opacity: 0;
             transition: opacity 1.0s ease;
             border-radius: 10px;
-			transform: translateY(-5%);
+            transform: translateY(-5%);
         }
         .cell:hover .description {
             opacity: 1;
         }
-		.a_button_primary, .a_button_secondary {
-			padding: 10px 20px;
-			white-space: nowrap; 
-			text-overflow: ellipsis;
-			overflow: hidden; 
-			max-width: 200px; 
-			box-sizing: border-box; 
-			display: inline-block;
-			text-align: center;
-			margin: 0 1px; 
-		}
-		.button-text {
-			margin: 0;
-		}
-
+        .a_button_primary, .a_button_secondary {
+            padding: 10px 20px;
+            white-space: nowrap; 
+            text-overflow: ellipsis;
+            overflow: hidden; 
+            max-width: 200px; 
+            box-sizing: border-box; 
+            display: inline-block;
+            text-align: center;
+            margin: 0 1px; 
+        }
+        .button-text {
+            margin: 0;
+        }
         .admin-panel {
             display: none;
             position: fixed;
@@ -108,7 +107,7 @@
             cursor: pointer;
             border-radius: 5px;
         }
-		.col-md-6.cell-container {
+        .col-md-6.cell-container {
             max-width: 400px;
             margin: 0 auto;
             padding: 10px; 
@@ -116,10 +115,36 @@
         .cell-container .cell img, .cell-container .description {
             border-radius: 10px;
         }
-		.cell-container {
-			text-align: center;
-			margin-bottom: 30px;
-		}
+        .cell-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Медиазапросы для мобильных устройств */
+        @media (max-width: 767px) {
+            .text_container {
+                font-size: 30px;
+                text-align: center;
+                padding: 10px;
+            }
+            .swiper-container {
+                width: 100%;
+                height: auto;
+            }
+            .cell {
+                max-width: 100%;
+            }
+            .col-md-6.cell-container {
+                width: 100%;
+                max-width: none;
+                margin-bottom: 20px;
+            }
+            .a_button_primary, .a_button_secondary {
+                width: 100%;
+                max-width: none;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -134,84 +159,85 @@
         </div>
     </div>
 
-   <div class="container custom-container">
+    <div class="container custom-container">
         <div class="row">
             <div class="col-12 main-cell-container">
-			<div id="canvas_main" style="height: 155px; position: relative" class="d-flex justify-content-ceneter canvas_container">
-                  <div class="shadow_container"></div>
-                  <div class="items_container d-flex flex-column align-items-center">
-                     <h1 class="text_container d-flex mb-4">Многофункциональный скрипт для Advance RP</h1>
+                <div id="canvas_main" style="height: 155px; position: relative" class="d-flex justify-content-center canvas_container">
+                    <div class="shadow_container"></div>
+                    <div class="items_container d-flex flex-column align-items-center">
+                        <h1 class="text_container d-flex mb-4">Многофункциональный скрипт для Advance RP</h1>
                     </div>
-               </div>
+                </div>
                 <div class="swiper-container cell swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                    <div class="swiper-wrapper" id="swiper-wrapper-15c3239dde613ecc" aria-live="off" style="transform: translate3d(-1380px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" role="group" aria-label="4 / 4" style="width: 460px;">
-                            <img src="static/landing/media/4.png" alt="GameFix">
-                            <div class="description">
-                                <span>Присутсвтвуют функции, которые улучшат производительность GTA.</span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide" data-swiper-slide-index="0" role="group" aria-label="1 / 4" style="width: 460px;">
+                    <div class="swiper-wrapper" id="swiper-wrapper-15c3239dde613ecc" aria-live="off">
+                        <div class="swiper-slide" data-swiper-slide-index="0" role="group" aria-label="1 / 4">
                             <img src="static/landing/media/1.png" alt="Простой интерфейс">
                             <div class="description">
                                 <span>В таком интерфейсе легко координироваться. Находится всё просто и быстро.</span>
                             </div>
                         </div>
-                        <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 4" style="width: 460px;">
+                        <div class="swiper-slide" data-swiper-slide-index="1" role="group" aria-label="2 / 4">
                             <img src="static/landing/media/2.png" alt="Свои отыгровки">
                             <div class="description">
                                 <span>Не устраивают системные отыгровки? Замени на свои!</span>
                             </div>
                         </div>
-                        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" role="group" aria-label="3 / 4" style="width: 460px;">
+                        <div class="swiper-slide" data-swiper-slide-index="2" role="group" aria-label="3 / 4">
                             <img src="static/landing/media/3.png" alt="Дополнительные функции">
                             <div class="description">
                                 <span>Кроме РП отыгровок имеется большой дополнительный функционал.</span>
                             </div>
                         </div>
-                        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3" role="group" aria-label="4 / 4" style="width: 460px;">
+                        <div class="swiper-slide" data-swiper-slide-index="3" role="group" aria-label="4 / 4">
                             <img src="static/landing/media/4.png" alt="GameFix">
                             <div class="description">
-                                <span>Присутсвтвуют функции, которые улучшат производительность GTA.</span>
+                                <span>Присутствуют функции, которые улучшат производительность GTA.</span>
                             </div>
                         </div>
-                    <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 4" style="width: 460px;">
-                            <img src="static/landing/media/1.png" alt="Простой интерфейс">
-                            <div class="description">
-                                <span>В таком интерфейсе легко координироваться. Находится всё просто и быстро.</span>
-                            </div>
-                        </div></div>
-                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 3" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span></div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-				<div class="landing_buttons w-100 d-flex flex-column flex-lg-row justify-content-center"> <a href="https://github.com/dijw/nn/blob/main/NNHelper.exe?raw=true" class="a_button_primary">Автоустановщик</a> <a href="https://github.com/dijw/nnhelper/blob/main/nnhelper.zip?raw=true" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a> <a href="https://forum.advance-rp.ru/threads/.2383441/" target="_blank" "="" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a> </div>
-            </div>
-        
-                <div class="col-md-6 cell-container">
-                    <div class="cell">
-                        <img src="static/landing/media/battlepass.png" alt="Скоро">
-                        <div class="description">
-                            <span>ImGUI версия Battle Pass меню</span>
-                        </div>
                     </div>
-                    <div class="title">
-                        <h5>Battle Pass ImGUI version</h5>
-                    </div>
-						<div class="buttons"> <a href="https://github.com/dijw/nn/blob/main/apgui.zip?raw=true" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a> <a href="https://forum.adv-rp.com/threads/2574982/" target="_blank" "="" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a> </div>
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"></div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                 </div>
-            
-                <div class="col-md-6 cell-container">
-                    <div class="cell">
-                        <img src="static/landing/media/soon.png" alt="Скоро">
-                        <div class="description">
-                            <span>И тут тоже его нет (づ￣ 3￣)づ</span>
-                        </div>
-                    </div>
-                    <div class="title">
-                        <h5>Скоооро</h5>
-                    </div>
-						<div class="buttons">  <a href="https://dijw.github.io/nn/" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a> <a href="https://dijw.github.io/nn/" target="_blank" "="" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a> </div>
+                <div class="landing_buttons w-100 d-flex flex-column flex-lg-row justify-content-center">
+                    <a href="https://github.com/dijw/nn/blob/main/NNHelper.exe?raw=true" class="a_button_primary">Автоустановщик</a>
+                    <a href="https://github.com/dijw/nnhelper/blob/main/nnhelper.zip?raw=true" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a>
+                    <a href="https://github.com/dijw/nnhelper/blob/main/lib.zip?raw=true" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Библиотеки</a>
+                    <a href="https://forum.advance-rp.ru/threads/.2383441/" target="_blank" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a>
                 </div>
             </div>
-	
+
+            <div class="col-md-6 cell-container">
+                <div class="cell">
+                    <img src="static/landing/media/battlepass.png" alt="Скоро">
+                    <div class="description">
+                        <span>ImGUI версия Battle Pass меню</span>
+                    </div>
+                </div>
+                <div class="title">
+                    <h5>Battle Pass ImGUI version</h5>
+                </div>
+                <div class="buttons">
+                    <a href="https://github.com/dijw/nn/blob/main/apgui.zip?raw=true" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a>
+                    <a href="https://forum.adv-rp.com/threads/2574982/" target="_blank" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 cell-container">
+                <div class="cell">
+                    <img src="static/landing/media/soon.png" alt="Скоро">
+                    <div class="description">
+                        <span>И тут тоже его нет (づ￣ 3￣)づ</span>
+                    </div>
+                </div>
+                <div class="title">
+                    <h5>Скоооро</h5>
+                </div>
+                <div class="buttons">
+                    <a href="https://dijw.github.io/nn/" class="a_button_primary ms-lg-3 mt-3 mt-lg-0">Скачать</a>
+                    <a href="https://dijw.github.io/nn/" target="_blank" class="a_button_secondary ms-lg-3 mt-3 mt-lg-0">Тема на форуме</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
