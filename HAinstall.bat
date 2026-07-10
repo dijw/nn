@@ -2,7 +2,6 @@
 chcp 1251 >nul
 setlocal enabledelayedexpansion
 
-:: Проверка наличия gta_sa.exe
 if not exist "gta_sa.exe" (
     echo Ошибка: gta_sa.exe не найден в текущей папке.
     echo Пожалуйста, запустите скрипт из корневой папки игры GTA San Andreas.
